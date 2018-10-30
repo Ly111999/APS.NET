@@ -1,0 +1,14 @@
+﻿@model Demo1.Models.Student
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+<form action="/Student/Update" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    RollNumber: <input type="text" name="rollNumber" value="@Model.RollNumber" />
+    Username: <input type="text" name="username" value="@Model.Name" />
+    <input type="submit" value="Edit"/>
+
+</form>
+
