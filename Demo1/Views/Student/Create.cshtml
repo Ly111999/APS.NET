@@ -4,17 +4,17 @@
 }
 
 <h2>@ViewData["Title"]</h2>
-<form action="/Student/Store" method="get">
-    <div>
-        Username: <input type="text" name="Name"/>
+<form action="/Student/Store" method="post">
+    <div style="margin-bottom: 6px;">
+        RollNumber:&nbsp; <input type="text" name="RollNumber" />
     </div>
     <div>
-        RollNumber: <input type="text" name="RollNumber"/>
+        Username: &nbsp;&nbsp; <input type="text" name="Name" />
     </div>
-    <div>
+    <div style="margin: 6px 0 0 85px;">
         <input type="submit" value="Submit"></input>
         <input type="reset" value="Reset"></input>
     </div>
-   
+
 </form>
 

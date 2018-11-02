@@ -6,9 +6,15 @@
 <h2>Edit</h2>
 <form action="/Student/Update" method="post">
     <input type="hidden" name="id" value="@Model.Id" />
-    RollNumber: <input type="text" name="rollNumber" value="@Model.RollNumber" />
-    Username: <input type="text" name="username" value="@Model.Name" />
-    <input type="submit" value="Edit"/>
+    <div style="margin-bottom: 6px;">
+        RollNumber:&nbsp; <input type="text" name="RollNumber" value="@Model.RollNumber"/>
+    </div>
+    <div>
+        Username: &nbsp;&nbsp; <input type="text" name="Name" value="@Model.Name"/>
+    </div>
+    <div style="margin: 6px 0 0 85px;">
+        <input type="submit" value="Edit"></input>
+    </div>
 
 </form>
 

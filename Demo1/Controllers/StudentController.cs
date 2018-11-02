@@ -31,12 +31,12 @@ namespace Demo1.Controllers
 
         public IActionResult Store(Student student)
         {
-            if (!_context.StudentItem.Any())
-            {
+            //if (_context.StudentItem.Count() <= 0)
+            //{
                 _context.StudentItem.Add(student);
                 _context.SaveChanges();
                 TempData["message"] = "Created success !!!";
-            }
+            //}
             return Redirect("Index");
         }
 
@@ -52,27 +52,27 @@ namespace Demo1.Controllers
 
         public IActionResult Update(Student student)
         {
-            var exisStudent = _context.StudentItem.Find(student.Id);
-            if (exisStudent == null)
+            var existStudent = _context.StudentItem.Find(student.Id);
+            if (existStudent == null)
             {
                 return NotFound();
             }
-            exisStudent.RollNumber = student.RollNumber;
-            exisStudent.Name = student.Name;
-            _context.StudentItem.Update(exisStudent);
+            existStudent.RollNumber = student.RollNumber;
+            existStudent.Name = student.Name;
+            _context.StudentItem.Update(existStudent);
             _context.SaveChanges();
             return Redirect("Index");
         }
 
         public IActionResult Delete(long id)
         {
-            var exisStudent = _context.StudentItem.Find(id);
-            if (exisStudent == null)
+            var existStudent = _context.StudentItem.Find(id);
+            if (existStudent == null)
             {
                 return NotFound();
             }
 
-            _context.StudentItem.Remove(exisStudent);
+            _context.StudentItem.Remove(existStudent);
             _context.SaveChanges();
             return Redirect("Index");
         }
